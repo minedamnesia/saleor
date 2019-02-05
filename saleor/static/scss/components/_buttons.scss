@@ -16,7 +16,7 @@ a.btn {
     font-size: $h3-font-size;
     color: $white;
     background-color: transparent;
-    border: 1px solid $white;
+    border: 1px solid $turquoise;
     padding: $global-padding $global-padding * 2;
     &:hover {
       background-color: $white;
@@ -79,13 +79,13 @@ a.btn {
       padding-right: $global-margin / 4;
     }
     &.facebook {
-      background: #3b5998;
+      background: #white;
       &:hover {
         background: darken(#3b5998, 10%);
       }
     }
     &.google {
-      background: #dd4b39;
+      background: #white;
       &:hover {
         background: darken(#dd4b39, 10%);
       }

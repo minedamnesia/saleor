@@ -51,9 +51,25 @@
   <header class="navbar" role="navigation">
     <div class="navbar__login container-fluid {% if user.is_impersonate %} bg-warning{% endif %}">
       <div class=" d-none d-md-block container">
-      <div class="row">
-        <div class="col-6">
-          <p class="text-left">{{ site.settings.translated.header_text }}</p>
+	<div class="row">
+        <div class="footer__menus__social-container col-6 float-left">
+          <div class="footer__menus__social col-6">
+            <a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/mirumeelabs/">
+              <svg data-src="{% static "images/facebook-logo.svg" %}" width="25px" height="25px"/>
+            </a>
+            <a target="_blank" rel="noopener" class="social-footer" href="https://github.com/mirumee/saleor">
+              <svg data-src="{% static "images/github-logo.svg" %}" width="25px" height="25px"/>
+            </a>
+            <a target="_blank" rel="noopener" class="social-footer" href="https://twitter.com/getsaleor">
+              <svg data-src="{% static "images/twitter-logo.svg" %}" width="25px" height="25px"/>
+            </a>
+            <a target="_blank" rel="noopener" class="social-footer" href="https://www.meetup.com/Mirumee-Talks/">
+              <svg data-src="{% static "images/meetup-logo.svg" %}" width="25px" height="25px"/>
+            </a>
+            <a target="_blank" rel="noopener" class="social-footer" href="https://www.instagram.com/explore/tags/mirumee/">
+              <svg data-src="{% static "images/instagram-logo.svg" %}" width="25px" height="25px"/>
+            </a>
+          </div>
         </div>
         <div class="col-6">
           <ul class="float-right">
@@ -107,8 +123,30 @@
               </li>
             {% endif %}
           </ul>
+
+            <div class="navbar__brand__cart float-right">
+              <a rel="nofollow" class="cart__icon" href="{% url "cart:index" %}">
+                <span class="cart-label d-none d-md-inline-block">
+                  {% trans "Your Cart" context "Main navigation item" %}
+                </span>
+                <div class="navbar__brand__cart__icon">
+                  <svg data-src="{% static "images/cart.svg" %}" width="20" height="20"/>
+                </div>
+                <span class="badge {% if not cart_counter %}empty{% endif %}">
+                  {% if cart_counter %}
+                    {{ cart_counter }}
+                  {% else %}
+                    0
+                  {% endif %}
+                </span>
+              </a>
+              <div class="cart-dropdown d-none">
+                {% include 'cart_dropdown.html' %}
+              </div>
+            </div>
+
         </div>
-      </div>
+    	</div>
     </div>
     </div>
     <div class="navbar__brand container-fluid d-block">
@@ -141,28 +179,6 @@
               </form>
             {% endif %}
           </div>
-          <div class="col-2 col-md-3">
-            <div class="navbar__brand__cart float-right">
-              <a rel="nofollow" class="cart__icon" href="{% url "cart:index" %}">
-                <span class="cart-label d-none d-md-inline-block">
-                  {% trans "Your Cart" context "Main navigation item" %}
-                </span>
-                <div class="navbar__brand__cart__icon">
-                  <svg data-src="{% static "images/cart.svg" %}" width="24" height="24"/>
-                </div>
-                <span class="badge {% if not cart_counter %}empty{% endif %}">
-                  {% if cart_counter %}
-                    {{ cart_counter }}
-                  {% else %}
-                    0
-                  {% endif %}
-                </span>
-              </a>
-              <div class="cart-dropdown d-none">
-                {% include 'cart_dropdown.html' %}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -193,7 +209,10 @@
   <div class="footer__menus">
     <div class="container">
       <div class="row">
-          {% footer_menu site_menu=site.settings.bottom_menu %}
+         <div class="col-md-2 col-2"><h3> Lists would go here </h3></div>
+         <div class="col-md-2 col-2">  This would be the 2nd list</div>       
+         <div class="col-md-2 col-4"> <h3> Icon would then be next </h3></div>
+         <div class="col-md-2 col-2">   <h3> This would be the 4th list </h3></div>
         <div class="col-md-2 col-6">
         <ul class="menu">
           <li class="nav-item__dropdown menu__item">
@@ -253,34 +272,6 @@
           </ul>
         </div>
         <div class="offset-md-2 col-md-4 col-12">
-          <div class="footer__menus__social-container">
-            <div class="footer__menus__social">
-              <a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/mirumeelabs/">
-                <svg data-src="{% static "images/facebook-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://github.com/mirumee/saleor">
-                <svg data-src="{% static "images/github-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://twitter.com/getsaleor">
-                <svg data-src="{% static "images/twitter-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://plus.google.com/+Mirumee">
-                <svg data-src="{% static "images/google-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://www.meetup.com/Mirumee-Talks/">
-                <svg data-src="{% static "images/meetup-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://linkedin.com/company/mirumee-software">
-                <svg data-src="{% static "images/linkedin-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://dribbble.com/mirumee">
-                <svg data-src="{% static "images/dribbble-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-              <a target="_blank" rel="noopener" class="social-footer" href="https://www.instagram.com/explore/tags/mirumee/">
-                <svg data-src="{% static "images/instagram-logo.svg" %}" width="45px" height="45px"/>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -289,11 +280,8 @@
     <div class="container">
       <div class="row">
         <div class="col-4">
-          <a href="{% url 'home' %}" class="footer__logo float-md-left">
-            <svg data-src="{% static "images/logo-document.svg" %}"/>
-          </a>
         </div>
-        <div class="col-8 footer__copy-text">COPYRIGHT © 2009–2019 MIRUMEE SOFTWARE</div>
+        <div class="col-8 footer__copy-text">COPYRIGHT ©2019 Kelly's Tea Salon</div>
       </div>
     </div>
   </div>

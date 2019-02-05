@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!~/saleor/env/bin/python
+
 import os
 import sys
 
