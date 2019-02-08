@@ -13,9 +13,9 @@
     }
   }
   &__section {
-    border: 2px solid $light-gray;
+    border: 2px solid $turquoise;
     padding: $global-padding;
-    border-radius: 0px;
+    border-radius: 15px;
     margin-bottom: $global-margin;
     p {
       margin-bottom: 0;
@@ -27,8 +27,8 @@
       }
     }
   }
-  &__tittle {
-    background-color: $light-gray;
+  &__title {
+    background-color: $light-turquoise;
     margin-bottom: 0;
     padding: $global-padding;
     p {
@@ -41,8 +41,8 @@
       
     }
   }
-  &__sub-tittle {
-    background-color: $light-gray;
+  &__sub-title {
+    background-color: $light-turquoise;
     padding: $global-padding;
     margin-bottom: 0;
     margin-top: -$global-padding;
@@ -53,7 +53,7 @@
   &__content {
     &__block {
       padding-bottom: $global-padding * 3;
-      border-top: 1px solid $gray;
+      border-top: 5px solid $turquoise;
       &__bold {
         font-weight: 700;
       }
@@ -73,7 +73,7 @@
         }
         &--white {
           background-color: $white;
-          border: 1px solid $gray;
+          border: 5px solid $turquoise;
         }
         &--light-gray {
           background-color: $light-gray;
@@ -126,8 +126,8 @@
       }
       &#icons {
         svg {
-          width: 35px;
-          height: 35px;
+          width: 25px;
+          height: 25px;
           display: inline-block;
           margin-right: $global-margin;
         }
@@ -147,7 +147,7 @@
       }
       .search-form {
         @include media-breakpoint-down(sm) {
-          margin-bottom: $global-margin;
+          margin-top: $global-margin / 2;
           position: relative;
           left: 0;
           .btn {

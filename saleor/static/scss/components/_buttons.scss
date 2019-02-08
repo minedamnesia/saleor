@@ -25,10 +25,11 @@ a.btn {
   }
   &-primary {
     border: none;
+    background-color: $med-turquoise;
     color: $white;
     padding: $global-padding $global-padding * 4;
     &:hover {
-      background-color: #42beab;
+      background-color: $turquoise;
       border: none;
       color: $white;
     }
@@ -37,16 +38,16 @@ a.btn {
     border: 1px solid $light-turquoise;
     padding: $global-padding $global-padding * 2;
     background-color: $white;
-    color: $light-turquoise;
+    color: $med-turquoise;
     &:hover {
-      border-color: #42beab;
-      color: #42beab;
+      border-color: $turquoise;
+      color: $turquoise;
     }
   }
   &.danger {
-    border: 1px solid $red;
-    background-color: transparent;
-    color: $red;
+    border: 1px solid $dark-red;
+    background-color: $red;
+    color: $white;
     padding: $global-padding $global-padding * 4;
     &:hover {
       background-color: $dark-red;
