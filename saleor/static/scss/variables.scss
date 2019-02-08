@@ -4,24 +4,52 @@ $global-margin: 1rem;
 $button-border-radius: 12px;
 
 // COLORS
-$body-color: #333333;
-$white: #fff;
+$body-color: #2eafac;
+$white: #fafafa;
 $light-gray: #f1f5f5;
 $gray: #d3d1d0;
 $darken-gray: darken($gray, 10%);
-$skull-gray: #828282;
-$blue: #26a5d4;
+$dark-gray:#545353;
+$skull-gray: #9EADBD;
+$blue: #1E8BCA;
 $darken-blue: darken($blue, 10%);
-$dark-blue: #21125e;
-$red: #eb5757;
-$dark-red: #c53636;
-$green: #27ae60;
-$beige: #fffaec;
-$turquoise: #13bebb;
-$light-turquoise: #3ee7cd;
+$dark-blue: #002456;
+$red: #f47e6f;
+$dark-red: #ef3c36;
+$green: #53b66d;
+$beige: #F3EADA;
+$orange: #559643;
+$turquoise: #2eafac;
+$light-turquoise: #E8F3F1;
+$med-turquoise: #98cdca;
 
 // TYPOGRAPHY
-$font-family-sans-serif: "Lato", sans-serif;
+$font-family-sans-serif: "Museo_Slab", sans-serif;
+@font-face {
+  font-family: Museo_Slab;
+  src: local(Museo Slab Light), url(/static/assets/Museo_Slab_300.woff2) format("woff2"), url(/static/assets/Museo_Slab_300.woff) format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Museo_Slab;
+  src: local(Museo Slab Med-Light), url(/static/assets/Museo_Slab_300.woff2) format("woff2"), url(/static/assets/Museo_Slab_300.woff) format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Museo_Slab;
+  src: local(Museo Slab  Medium), url(/static/assets/Museo_Slab_500.woff2) format("woff2"), url(/static/assets/Museo_Slab_300.woff) format("woff");
+  font-weight: 500;
+}
+
+$font-family-decorative: "aphrodite_slim_text", sans-serif;
+@font-face {
+  font-family: aphrodite_slim_text;
+  src: local(Aphrodite Slim Text), url(/static/assets/aphrodite_slim_text.woff2) format("woff2"), url(/static/assets/aprodite_slim_text.woff) format("woff");
+  font-weight: 400;
+}
+
+
 $h1-font-size: 3rem;
 $h2-font-size: 1.3rem;
 $h3-font-size: 1rem;
@@ -31,8 +59,8 @@ $theme-colors: (
   secondary: $white,
   success: $green,
   info: $turquoise,
-  warning: #ffc107,
-  danger: $red,
-  light: #f8f9fa,
-  dark: #343a40
+  warning: $orange,
+  danger: $dark-red,
+  light: $light-turquoise,
+  dark: $turquoise
 );

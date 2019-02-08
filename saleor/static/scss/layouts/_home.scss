@@ -1,6 +1,7 @@
 .home {
   text-align: center;
-  color: $white;
+  color: $darken-gray;
+  background-color: $turquoise;
   h1 {
     font-weight: 300;
     text-transform: uppercase;
@@ -41,13 +42,9 @@
     }
   }
   &__block1 {
+    margin-top: $global-margin * 2;
     .home--square {
       background-image: url('../images/block1.jpg');
-      @include media-breakpoint-up(md) {
-        &:before {
-          padding-top: 50%;
-        }
-      }
     }
   }
   &__block2 {
@@ -62,11 +59,15 @@
       background-image: url('../images/block3.jpg');
     }
   }
+  &__feature-title {
+    color: $white;
+    }
   &__featured {
-    color: $body-color;
+    color: $white;
     h2 {
-      text-transform: uppercase;
+      text-transform: capitalize;
       margin: $global-margin * 2 0;
     }
   }
 }
+
