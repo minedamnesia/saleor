@@ -29,3 +29,19 @@
 @import "layouts/product-list";
 @import "layouts/product-page";
 @import "layouts/styleguide";
+
+body {
+  background-color: $background-color;
+  color: $white;
+  padding-top: 0;
+}
+
+.alert-danger {
+  background-color: $red;
+  color: $dark-gray;
+  border-color: $dark-red;
+}
+
+.form-control {
+  color: $dark-gray;
+}

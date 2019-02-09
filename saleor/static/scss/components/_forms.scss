@@ -1,7 +1,7 @@
 .form-control,
 select,
 input {
-  color: $body-color;
+  color: $dark-gray;
   border-radius: 8px;
   border: 1px solid $gray;
   &:focus {
@@ -96,6 +96,7 @@ input {
   }
   .form-control {
     width: 100%;
+    padding: 0.5rem;
     border-radius: $button-border-radius;
     padding: $global-padding;
     font-size: 0.8rem;

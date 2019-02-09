@@ -4,7 +4,7 @@
   background-color: $turquoise;
   h1 {
     font-weight: 300;
-    text-transform: uppercase;
+    text-transform: capitalizee;
     @include media-breakpoint-down(sm) {
       font-size: 2.5rem;
     }

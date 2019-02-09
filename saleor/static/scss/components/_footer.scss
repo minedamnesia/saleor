@@ -1,11 +1,25 @@
 .footer {
   &__menus {
-    background-color: $light-gray;
+    color: $white;
     padding: $global-padding * 2 0;
     margin-top: $global-margin * 8;
     @include media-breakpoint-down(xs) {
       text-align: center;
       margin-top: $global-margin * 2;
+    }
+    a {
+      transition: 0.3s;
+      &:hover {
+        text-decoration: none;
+        opacity: 0.6;
+      }
+      &.social-footer {
+        padding: 3px;
+        border-radius: 100%;
+        display: inline-block;
+        margin-bottom: $global-margin;
+        margin-right: $global-margin;
+      }
     }
     .menu__item {
       & > a {
@@ -13,6 +27,7 @@
       }
     }
     &__social {
+      background-color:$turquoise;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -36,7 +51,7 @@
   &__logo {
     margin-bottom: $global-margin;
     svg {
-      height: 38px;
+      height: 50px;
       width: 100%;
     }
   }
@@ -59,6 +74,7 @@
     }
     &.social-footer {
       background-color: $dark-blue;
+      padding: 3px;
       border-radius: 100%;
       display: inline-block;
       height: 36px;
