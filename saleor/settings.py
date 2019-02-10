@@ -1,5 +1,8 @@
 import ast
 import os.path
+import sys
+import environ
+environ.Env.read_env()
 
 import dj_database_url
 import dj_email_url
@@ -10,6 +13,15 @@ from django_prices.templatetags.prices_i18n import get_currency_fraction
 
 from . import __version__
 
+
+if __name__ == "__main__":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "saleor.settings")
+
+    from django.core.management import execute_from_command_line
+
+    execute_from_command_line(sys.argv)
+
+path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 def get_list(text):
     return [item.strip() for item in text.split(',')]
@@ -39,6 +51,7 @@ WSGI_APPLICATION = 'saleor.wsgi.application'
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
+
 MANAGERS = ADMINS
 
 INTERNAL_IPS = get_list(os.environ.get('INTERNAL_IPS', '127.0.0.1'))
@@ -51,7 +64,7 @@ CACHES = {'default': django_cache_url.config()}
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://saleor:saleor@localhost:5432/saleor',
+        default='postgres://kabdelmagid:Nicodem8s@localhost:5432/saleor',
         conn_max_age=600)}
 
 
@@ -170,7 +183,8 @@ TEMPLATES = [{
         'string_if_invalid': '<< MISSING VARIABLE "%s" >>' if DEBUG else ''}}]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = environ.Env.read_env(env_file=path)
+#os.environ.get('SECRET_KEY')
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -378,7 +392,7 @@ bootstrap4 = {
 TEST_RUNNER = 'tests.runner.PytestTestRunner'
 
 ALLOWED_HOSTS = get_list(
-    os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1'))
+    os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,159.203.111.90'))
 ALLOWED_GRAPHQL_ORIGINS = os.environ.get('ALLOWED_GRAPHQL_ORIGINS', '*')
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

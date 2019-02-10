@@ -52,7 +52,7 @@
     <div class="navbar__login container-fluid {% if user.is_impersonate %} bg-warning{% endif %}">
       <div class=" d-none d-md-block container">
 	<div class="row">
-        <div class="footer__menus__social-container col-3 float-left">
+        <div class="footer__menus__social-container col-2 float-left">
           <div class="footer__menus__social">
             <a target="_blank" rel="noopener" class="social-footer" href="tps://www.facebook.com/kellysteasalon/">
               <svg data-src="{% static "images/facebook.svg" %}" width="20px" height="20px"/>
@@ -87,7 +87,7 @@
               </form>
             {% endif %}
           </div> 
-	<div class="col-5">
+	<div class="col-7 col-med-6">
           <ul class="float-left">
             {% get_available_languages as LANGUAGES %}
 
@@ -167,14 +167,16 @@
     <div class="navbar__brand container-fluid d-block">
       <div class="container">
         <div class="row no-gutters">
+          <div class="col-2 col-md-4"></div>
           <div class="col-8 col-md-4 navbar__logo">
             <div class="menu-icon-mobile d-md-none navbar__brand__menu-toggle closed open">
               <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
             </div>
             <a href="{% url 'home' %}">
-              <svg data-src="{% static "images/logo-document.svg" %}"/>
+              <img data-src="{% static "images/center_tea_logo.png" height="100px" %}"/>
             </a>
           </div>
+          <div class="col-2 col-md-4"></div>
         </div>
       </div>
     </div>

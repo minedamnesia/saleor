@@ -19,7 +19,7 @@
       a {
         color: $white;
         transition: 0.3s;
-        text-transform: capitalize;
+        text-transform: uppercase;
         display: inline-block;
         padding: $global-padding * 1.5;
         font-size: 1.5rem;
@@ -112,6 +112,7 @@
 
     a {
       text-decoration: none;
+      color: $white;
     }
 
     @include media-breakpoint-down(sm) {
@@ -140,7 +141,7 @@
       padding: 0;
     }
     svg {
-      max-height: 30px;
+      max-height: 20px;
       width: auto;
     }
   }
@@ -154,9 +155,9 @@
     p {
       font-size: 0.7rem;
       margin-bottom: 0;
-      color: $white;
+      color: $skull-gray;
       line-height: 1.9rem;
-      text-transform: capitalize;
+      text-transform: uppercase;
       width: 100%;
     }
     ul {
@@ -167,15 +168,15 @@
         padding: 0 $global-padding / 2;
         line-height: 1.9rem;
         a {
-          color: $white;
+          color: $body-color;
           font-size: 0.7rem;
-          text-transform: capitalize;
+          text-transform: uppercase;
         }
       }
     }
   }
   &__logo {
-    padding: $global-padding;
+    padding: $global-padding * 2 0;
     display: flex;
     align-items: center;
     svg {
@@ -202,12 +203,12 @@
     }
   }
   &__search {
-    padding: 0;
+    padding: $global-padding * 2 0;
     position: relative;
     form {
       svg {
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 11px;
         margin-left: 10px;
         vertical-align: middle;
       }
@@ -215,20 +216,13 @@
         padding: $global-padding;
       }
     }
-    .form-control {
-      height: 20px:
-      margin-top: 2px;
-      margin-bottom: 2px;
-    }
     .mobile-search-icon {
       float: right;
-      height: 20px;
       padding-right: $global-padding;
     }
   }
   &__brand {
-    background-color: $white;
-    height: 150px;
+    background-color: $light-gray;
     @include media-breakpoint-down(sm) {
       position: fixed;
       top: 0;
@@ -244,7 +238,7 @@
     &__cart {
       z-index: 4;
       @include media-breakpoint-up(md) {
-        line-height: 2rem;
+        line-height: 2.4rem;
       }
       .cart__icon {
         color: $white;
@@ -256,16 +250,16 @@
 	padding-left: $global-padding * 2;
         position: absolute;
         right: 0;
-        top: 2;
+        top: 0;
         z-index: 4;
         @include media-breakpoint-down(sm) {
           position: relative;
-          padding: 1rem 1rem 2rem 0;
+          padding: 2rem 1rem 2rem 0;
         }
         &.hover {
           text-decoration: none;
           background: $white;
-	  color: $dark-gray;
+	  color: dark-gray;
           border-top: solid 1px $gray;
           border-left: solid 1px $gray;
           border-right: solid 1px $gray;
@@ -286,13 +280,13 @@
         .navbar__brand__cart__icon {
           display: inline-block;
           svg {
-            vertical-align: top;
+            vertical-align: middle;
           }
         }
         .badge {
           position: absolute;
-          right: 20px;
-          top: 3px;
+          right: -15px;
+          top: 10px;
           background-color: $light-turquoise;
           border-radius: 100px;
           color: $white;
@@ -320,15 +314,15 @@
     @include media-breakpoint-down(sm) {
       .navigation {
         position: fixed;
-        left: -120px;
-        top: 75px;
+        left: -50px;
+        top: 50px;
         height: 100vh;
         width: 180px;
         z-index: 4;
         background-color: $white;
         padding-left: 0;
         padding-right: $global-padding;
-        padding-top: $global-padding;
+        padding-top: $global-padding * 5;
         transition: 0.3s ease-in-out;
         ul {
           text-align: left;
