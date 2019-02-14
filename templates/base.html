@@ -173,7 +173,7 @@
               <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
             </div>
             <a href="{% url 'home' %}">
-              <img data-src="{% static "images/center_tea_logo.png" height="100px" %}"/>
+              <img data-src="{% static "images/center_tea_logo.png" %}" width="240px" height="150px"/>
             </a>
           </div>
           <div class="col-2 col-md-4"></div>
@@ -207,11 +207,33 @@
   <div class="footer__menus">
     <div class="container">
       <div class="row">
-         <div class="col-md-2 col-2"><h3> Lists would go here </h3></div>
-         <div class="col-md-2 col-2">  This would be the 2nd list</div>       
-         <div class="col-md-2 col-4"> <h3> Icon would then be next </h3></div>
-         <div class="col-md-2 col-2">   <h3> This would be the 4th list </h3></div>
-        <div class="col-md-2 col-6">
+         <div class="col-md-2 col-2 footer-list">
+		<ul class="menu">
+		    <strong> NEWS </strong>
+		    <li> Events</li>
+		    <li> Newsletter</li>
+		    <li> Community </li>
+		    <li> Blog </li>
+		</ul>
+	</div>
+         <div class="col-md-2 col-2 footer-list">
+		<ul class="menu">
+                    <strong> ABOUT US </strong>
+                    <li> Our Story</li>
+                    <li> Privacy Policy</li>
+		</ul>
+	</div>
+	 <div class="col-md-2 col-3 footer-logo"> <h3> Icon would then be next </h3></div>
+         <div class="col-md-2 col-2 footer-list">
+         <div class="col-md-2 col-2 footer-list">
+                <ul class="menu">
+                    <strong> INFORMATION </strong>
+                    <li> Shipping Policy</li>
+                    <li> FAQs</li>
+                    <li> Terms of Service </li>
+                </ul>
+        </div>
+        <div class="col-md-2 col-2 footer-list">
         <ul class="menu">
           <li class="nav-item__dropdown menu__item">
             <a>
