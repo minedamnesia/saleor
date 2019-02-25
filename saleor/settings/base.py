@@ -1,5 +1,6 @@
 import ast
 import os.path
+from os.path import normpath, join, dirname
 
 
 import dj_database_url
@@ -29,7 +30,7 @@ DEBUG = get_bool_from_env('DEBUG', True)
 
 SITE_ID = 1
 
-PROJECT_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '...'))
+PROJECT_ROOT = normpath(join(join(dirname(__file__), '..'), '..'))
 
 ROOT_URLCONF = 'saleor.urls'
 
@@ -48,10 +49,7 @@ if REDIS_URL:
     CACHE_URL = os.environ.setdefault('CACHE_URL', REDIS_URL)
 CACHES = {'default': django_cache_url.config()}
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://kabdelmagid:Nicodem8s@localhost:5432/saleor',
-        conn_max_age=600)}
+
 
 
 TIME_ZONE = 'America/Chicago'
@@ -170,7 +168,7 @@ TEMPLATES = [{
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY =  os.environ.get('SECRET_KEY')
-#env('SECRET_KEY') 
+#env('SECRET_KEY')
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
