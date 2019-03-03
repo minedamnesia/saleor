@@ -34,3 +34,6 @@ dist/
 webpack-bundle.json
 /templates/templated_email/compiled/*
 !/templates/templated_email/compiled/.gitkeep
+/saleor/settings/dev.py
+/saleor/settings/production.py
+

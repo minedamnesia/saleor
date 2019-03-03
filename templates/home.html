@@ -21,14 +21,14 @@
       </div>
     </div>
     {% if products %}
-      <h2 class="text-center">{% trans "Featured products" context "Homepage title" %}</h2>
+        <h2 class="text-center home--featured-products-title">{% trans "Featured products" context "Homepage title" %}</h2>
         <div class="row">
 	<div class="col-sm-12 col-md-3 home__block3">
         <div class="home--square">
           <div class="home--content">
             <div class="home--content-wrapper">
               <div class="home--content-inner">
-                <a class="btn btn-secondary home__button" href="#">{% trans "Shop now" context "Homepage action" %}</a>
+                <a class="btn btn-secondary home__button home__featured_shopping" href="#">{% trans "Shop now" context "Homepage action" %}</a>
               </div>
             </div>
           </div>
@@ -70,10 +70,10 @@
           </div>
         </div>
       </div>
-
+     
     </div>
+
       <div class="home__featured">
-        <h2 class="text-center">{% trans "Featured products" context "Homepage title" %}</h2>
         <div class="row">
           {% include "product/_items.html" %}
         </div>
@@ -82,14 +82,16 @@
     <script type="application/ld+json">{{ webpage_schema|safe }}</script>
   </div>
  <div class="row">
-	<div class="col-12">
+	<div class="col-12 home__tea">
 		<button>How Do You Do Tea?</button>
 	 </div>
 </div>
  <div class="row">
+	<div class="col-12 home__instagram">
 	<h3> Latest from Social Media </h3> 
 	<div class="col-3"> </div>
 	<div class="col-3"> </div>
 	<div class="col-3"> </div>
+	</div>
 </div>
 {% endblock %}

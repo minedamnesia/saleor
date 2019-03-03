@@ -61,6 +61,15 @@
   }
   &__feature-title {
     color: $white;
+    font-family: font-family-decorative;
+    }
+
+  &__featured-products-title{
+    margin-top: $global-margin;
+    color: $white;
+    }
+  &__featured_shopping{
+     margin-top: $global-margin * 3;
     }
   &__featured {
     color: $white;
@@ -69,5 +78,11 @@
       margin: $global-margin * 2 0;
     }
   }
+  &__tea{
+    margin-top: $global-margin * 2;
+   }
+  &__instagram{
+    margin-top: $global-margin * 2;
+   }
 }
 
