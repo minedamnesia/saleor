@@ -168,7 +168,7 @@
         line-height: 1.9rem;
         a {
           color: $white;
-          font-size: 0.7rem;
+          font-size: 1rem;
           text-transform: capitalize;
         }
       }
@@ -219,6 +219,7 @@
       height: 15px;
       margin-top: 2px;
       margin-bottom: 2px;
+      padding: 1rem;
     }
     .mobile-search-icon {
       float: right;
