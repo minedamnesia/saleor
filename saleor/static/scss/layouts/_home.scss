@@ -11,6 +11,7 @@
   }
   .btn {
     margin-top: $global-margin;
+    background-color: $light-turquoise;
   }
   &--content-wrapper {
      display: table;
@@ -44,7 +45,7 @@
   &__block1 {
     margin-top: $global-margin * 2;
     .home--square {
-      background-image: url('../images/block1.jpg');
+      background-image: url('../images/lead_hibiscus_photo.png');
     }
   }
   &__block2 {

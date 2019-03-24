@@ -21,8 +21,10 @@
       </div>
     </div>
     {% if products %}
+      <div class="home__featured">
         <h2 class="text-center home--featured-products-title">{% trans "Featured products" context "Homepage title" %}</h2>
         <div class="row">
+          {% include "product/_items.html" %}
 	<div class="col-sm-12 col-md-3 home__block3">
         <div class="home--square">
           <div class="home--content">
@@ -73,22 +75,17 @@
      
     </div>
 
-      <div class="home__featured">
-        <div class="row">
-          {% include "product/_items.html" %}
-        </div>
-      </div>
+    </div>
     {% endif %}
     <script type="application/ld+json">{{ webpage_schema|safe }}</script>
   </div>
  <div class="row">
 	<div class="col-12 home__tea">
-		<button> Coming Soon -- How Do You Do Tea?</button>
 	 </div>
 </div>
  <div class="row">
 	<div class="col-12 home__instagram">
-	<h3> Coming SOon -- Latest from Social Media </h3> 
+	<h2> Latest Posts From Instagram </h3> 
 	<div class="col-3"> </div>
 	<div class="col-3"> </div>
 	<div class="col-3"> </div>

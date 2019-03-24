@@ -12,11 +12,11 @@
   {% block meta %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Saleor">
-    <meta name="theme-color" content="#333333">
+    <meta name="generator" content="Kelly's Tea Salon">
+    <meta name="theme-color" content="turqouise">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="turquoise">
     <meta name="apple-mobile-web-app-title" content="{{ site.name }}">
     <meta name="og:type" content="website">
     {% get_available_languages as LANGUAGES %}
@@ -173,7 +173,7 @@
               <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
             </div>
             <a href="{% url 'home' %}">
-              <img width="240px" height="150px" src="/static/images/center_tea_logo.png">
+              <img height="130px" src="/static/images/center_tea_logo.png">
             </a>
           </div>
           <div class="col-2 col-md-4"></div>
@@ -207,83 +207,84 @@
   <div class="footer__menus">
     <div class="container">
       <div class="row">
+
          <div class="col-md-2 col-2 footer-list">
 		<ul class="menu">
 		    <strong> NEWS </strong>
-		    <li> Events</li>
-		    <li> Newsletter</li>
-		    <li> Community </li>
-		    <li> Blog </li>
+		    <li class="nav-item__footer-menu-item"> Events</li>
+		    <li class="nav-item__footer-menu-item"> Newsletter</li>
+		    <li class="nav-item__footer-menu-item"> Community </li>
+		    <li class="nav-item__footer-menu-item"> Blog </li>
 		</ul>
 	</div>
+
          <div class="col-md-2 col-2 footer-list">
 		<ul class="menu">
                     <strong> ABOUT US </strong>
-                    <li> Our Story</li>
-                    <li> Privacy Policy</li>
+                    <li class="nav-item__footer-menu-item"> Our Story</li>
+                    <li class="nav-item__footer-menu-item"> Privacy Policy</li>
 		</ul>
 	</div>
-	 <div class="col-md-2 col-3 footer-logo"> <h3> Icon would then be next </h3></div>
-         <div class="col-md-2 col-2 footer-list">
+
+	 <div class="col-md-2 col-4 footer-logo"> 
+            <a href="{% url 'home' %}">
+              <img height="175px" src="/static/images/profile_logo.png">
+            </a>
+        </div>
+
          <div class="col-md-2 col-2 footer-list">
                 <ul class="menu">
                     <strong> INFORMATION </strong>
-                    <li> Shipping Policy</li>
-                    <li> FAQs</li>
-                    <li> Terms of Service </li>
+                    <li class="nav-item__footer-menu-item"> Shipping Policy</li>
+                    <li class="nav-item__footer-menu-item"> FAQs</li>
+                    <li class="nav-item__footer-menu-item"> Terms of Service </li>
+                    <li class="nav-item__footer-menu-item"> Brewing Guide </li>
                 </ul>
         </div>
+
         <div class="col-md-2 col-2 footer-list">
-        <ul class="menu">
-          <li class="nav-item__dropdown menu__item">
-            <a>
-              <strong>
-                {% trans "Account" %}
-              </strong>
-            </a>
-            <hr />
-            <li>
-              <a rel="nofollow" href="{% url "cart:index" %}">
-                {% trans "Your Cart" context "Main navigation item" %}
-              </a>
-            </li>
-            {% if user.is_authenticated %}
-              {% if user.is_staff %}
-                <li>
+            <ul class="menu">
+              <strong> QUICK LINKS </strong>
+              <li class="nav-item__footer-menu-item">
+                <a> {% trans "Your Account" %}</a>
+              </li>  
+                <li class="nav-item__footer-menu-item">
+                 <a rel="nofollow" href="{% url "cart:index" %}">
+                  {% trans "Your Cart" context "Main navigation item" %}
+                 </a>
+                </li>
+               {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                <li class="nav-item__footer-menu-item">
                   <a href="{% url "dashboard:index" %}" target="_blank" rel="noopener">
                     {% trans "Dashboard" context "Main navigation item" %}
                   </a>
                 </li>
-                <li>
-                  <a href="{% url "styleguide" %}" target="_blank">
-                    {% trans "Style guide" context "Main navigation item" %}
-                  </a>
-                </li>
-              {% endif %}
-              <li>
+                {% endif %}
+                <li class="nav-item__footer-menu-item">
                 <a href="{% url "account:details" %}">
                   {% trans "Your account" context "Main navigation item" %}
                 </a>
-              </li>
-              {% if user.is_impersonate %}
-                <li>
+                </li>
+                {% if user.is_impersonate %}
+                <li class="nav-item__footer-menu-item">
                   <a href="{% url "impersonate-stop" %}">
                     {% trans 'Stop impersonating' context 'Main navigation item' %}
                   </a>
                 </li>
-              {% else %}
-                <li>
+                {% else %}
+                <li class="nav-item__footer-menu-item">
                   <a href="{% url "account:logout" %}">
                     {% trans "Log out" context "Main navigation item" %}</a>
                 </li>
-              {% endif %}
+               {% endif %}
             {% else %}
-              <li>
+               <li class="nav-item__footer-menu-item">
                 <a rel="nofollow" href="{% url "account:signup" %}">
                   {% trans "Register" context "Main navigation item" %}
                 </a>
               </li>
-              <li>
+              <li class="nav-item__footer-menu-item">
                 <a rel="nofollow" href="{% url "account:login" %}">
                   {% trans "Log in" context "Main navigation item" %}
                 </a>
@@ -291,11 +292,10 @@
             {% endif %}
           </ul>
         </div>
-        <div class="offset-md-2 col-md-4 col-12">
-        </div>
       </div>
     </div>
   </div>
+
   <div class="footer__copy">
     <div class="container">
       <div class="row">
@@ -305,6 +305,7 @@
       </div>
     </div>
   </div>
+
   </footer>
 {% endblock %}
 {% block footer_scripts %}
