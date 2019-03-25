@@ -24,18 +24,7 @@
       <div class="home__featured">
         <h2 class="text-center home--featured-products-title">{% trans "Featured products" context "Homepage title" %}</h2>
         <div class="row">
-          {% include "product/_items.html" %}
-	<div class="col-sm-12 col-md-3 home__block3">
-        <div class="home--square">
-          <div class="home--content">
-            <div class="home--content-wrapper">
-              <div class="home--content-inner">
-                <a class="btn btn-secondary home__button home__featured_shopping" href="#">{% trans "Shop now" context "Homepage action" %}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          {% include "product/_homepage_items.html" %}
 
         <div class="col-sm-12 col-md-3 home__block3">
         <div class="home--square">
@@ -49,17 +38,6 @@
         </div>
       </div>
 
-        <div class="col-sm-12 col-md-3 home__block3">
-        <div class="home--square">
-          <div class="home--content">
-            <div class="home--content-wrapper">
-              <div class="home--content-inner">
-                <a class="btn btn-secondary home__button" href="#">{% trans "Shop now" context "Homepage action" %}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
         <div class="col-sm-12 col-md-3 home__block3">
         <div class="home--square">
