@@ -55,16 +55,16 @@
         <div class="footer__menus__social-container col-2 float-left">
           <div class="footer__menus__social">
             <a target="_blank" rel="noopener" class="social-footer" href="tps://www.facebook.com/kellysteasalon/">
-              <svg data-src="{% static "images/facebook.svg" %}" width="20px" height="20px"/>
+              <svg data-src="{% static "images/facebook.svg" %}" width="30px" height="30px"/>
             </a>
-            <a target="_blank" rel="noopener" class="social-footer" href="https://www.instagram.com/explore/tags/">
-              <svg data-src="{% static "images/instagram-logo.svg" %}" width="20px" height="20px"/>
+            <a target="_blank" rel="noopener" class="social-footer" href="https://www.instagram.com/kellystea2019/">
+              <svg data-src="{% static "images/instagram-logo.svg" %}" width="30px" height="30px"/>
             </a>
             <a target="_blank" rel="noopener" class="social-footer" href="https://www.pinterest.com/kellysteasalon/">
-              <svg data-src="{% static "images/pinterest-logo-button.svg" %}" width="20px" height="20px"/>
+              <svg data-src="{% static "images/pinterest-logo-button.svg" %}" width="30px" height="30px"/>
             </a>
             <a target="_blank" rel="noopener" class="social-footer" href="https://twitter.com/kellystea1">
-              <svg data-src="{% static "images/twitter-logo.svg" %}" width="20px" height="20px"/>
+              <svg data-src="{% static "images/twitter-logo.svg" %}" width="30px" height="30px"/>
             </a>
 	  </div>
 	</div>
@@ -168,13 +168,15 @@
       <div class="container">
         <div class="row no-gutters">
           <div class="col-2 col-md-4"></div>
-          <div class="col-8 col-md-4 navbar__logo">
+          <div class="col-8 col-md-4 mx-auto navbar__logo">
             <div class="menu-icon-mobile d-md-none navbar__brand__menu-toggle closed open">
               <svg data-src="{% static "images/mobile-menu.svg" %}" width="28px" height="20px"/>
             </div>
+            <div class="mx-auto">
             <a href="{% url 'home' %}">
               <img height="130px" src="/static/images/center_tea_logo.png">
             </a>
+            </div>
           </div>
           <div class="col-2 col-md-4"></div>
         </div>
@@ -187,7 +189,7 @@
     </div>
   </header>
 {% endblock %}
-<div class="container maincontent">
+<div class="container container-fluid maincontent">
   {% block topcontent %}{% endblock topcontent %}
   {% if messages %}
     {% for message in messages %}
@@ -205,7 +207,7 @@
 {% block footer %}
   <footer class="footer">
   <div class="footer__menus">
-    <div class="container">
+    <div class="container container-fluid">
       <div class="row">
 
          <div class="col-md-2 col-2 footer-list">
@@ -226,10 +228,12 @@
 		</ul>
 	</div>
 
-	 <div class="col-md-2 col-4 footer-logo"> 
+	 <div class="col-md-4 col-4 footer-logo"> 
+           <div class="mx-auto">
             <a href="{% url 'home' %}">
               <img height="175px" src="/static/images/profile_logo.png">
             </a>
+           </div>
         </div>
 
          <div class="col-md-2 col-2 footer-list">
@@ -297,7 +301,7 @@
   </div>
 
   <div class="footer__copy">
-    <div class="container">
+    <div class="container container-fluid">
       <div class="row">
         <div class="col-4">
         </div>

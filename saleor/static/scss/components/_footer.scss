@@ -39,6 +39,11 @@
         flex-direction: column;
         justify-content: center;
         height: 100%;
+        svg{
+         margin-top: 3px;
+         margin-left: 2.5px;
+         margin-right: 2.5px;
+        }
       }
     }
   }
@@ -62,8 +67,8 @@
     list-style: none;
     padding-left: 0;
     a {
-      color: $black;
-      line-height: 2;
+      color: $white;
+      line-height: 1.5;
     }
   }
   a {
@@ -75,6 +80,8 @@
     &.social-footer {
       background-color: $dark-blue;
       padding: 3px;
+      margin-right: 2.5px;
+      margin-left: 2.5px;
       border-radius: 100%;
       display: inline-block;
       height: 36px;
