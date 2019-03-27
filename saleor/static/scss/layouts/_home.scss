@@ -11,7 +11,8 @@
   }
   .btn {
     margin-top: $global-margin;
-    background-color: $light-turquoise;
+    background-color: $dark-red;
+    border-color: $dark-red;
   }
   &--content-wrapper {
      display: table;
@@ -46,6 +47,7 @@
     margin-top: $global-margin * 2;
     .home--square {
       background-image: url('../images/lead_hibiscus_photo.png');
+      max-height: 600px;
     }
   }
   &__block2 {
@@ -84,6 +86,8 @@
    }
   &__instagram{
     margin-top: $global-margin * 2;
+    border-color: $dark-gray;
+    border-size: 2px;
    }
 }
 
