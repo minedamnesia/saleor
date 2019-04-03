@@ -2,6 +2,10 @@
 	max-width: 30rem;
 	margin: auto;
 	text-align: center;
+        #clear-product-image {
+          background-color: transparent;
+          border-radius: 0px;
+        }
 	h2 {
 		padding-top: $global-padding;
 		font-size: 2.5rem;
