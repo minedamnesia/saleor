@@ -1,5 +1,9 @@
+.filter-container {
+  background-color:$blue;
+}
 .product-filters {
   padding-bottom: $global-padding * 2;
+  background-color:$blue;
   .btn {
     padding: $global-padding;
   }
@@ -26,6 +30,7 @@
       grid-template-columns: calc(100% - 20px) 20px;
       margin-bottom: 0.5rem;
       padding-bottom: 0.5rem;
+      padding-top: 2.0rem;
       h3 {
         font-weight: bold;
         padding-right: $global-padding * 0.5;

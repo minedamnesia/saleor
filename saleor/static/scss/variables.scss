@@ -4,8 +4,8 @@ $global-margin: 1rem;
 $button-border-radius: 12px;
 
 // COLORS
-$body-color: #2eafac;
-$background-color: #2eafac;
+$body-color: #E8F3F1;
+$background-color: #E8F3F1;
 $white: #fafafa;
 $light-gray: #f1f5f5;
 $gray: #d3d1d0;
@@ -46,7 +46,7 @@ $font-family-sans-serif: "Museo_Slab", sans-serif;
 $font-family-decorative: "aphrodite_slim_text", sans-serif;
 @font-face {
   font-family: aphrodite_slim_text;
-  src: local(Aphrodite Slim Text), url(/static/assets/aphrodite_slim_text.woff2) format("woff2"), url(/static/assets/aprodite_slim_text.woff) format("woff");
+  src: local(Aphrodite Slim Text), url(/static/fonts/aphrodite_slim_text.woff2) format("woff2"), url(/static/fonts/aprodite_slim_text.woff) format("woff");
   font-weight: 400;
 }
 

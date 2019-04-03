@@ -1,4 +1,5 @@
 .navigation {
+  background-color: $turquoise;
   ul {
     border-bottom: 1px solid $gray;
     margin-bottom: $global-margin;
@@ -64,7 +65,7 @@
             width: 100%;
 	    padding: $global-padding;
             max-height: 28rem;
-
+           
             > ul {
               min-width: 120px;
               width: 360px;
@@ -92,8 +93,8 @@
 }
 
 .menu {
+  background-color: $turquoise;
   .menu__item {
-    color: $white;
     ul {
       border-bottom: none;
       list-style-type: none;
@@ -135,6 +136,7 @@
 .navbar {
   padding: 0;
   width: 100%;
+  background-color: $turquoise;
   @include media-breakpoint-down(sm) {
     > .container-fluid {
       padding: 0;
@@ -149,6 +151,11 @@
       max-height: 23px;
       width: auto;
     }
+  }
+  &__login-inner {
+    padding-left:0px;
+    padding-right:0px;
+    background-color: $turquoise
   }
   &__login {
     p {
@@ -294,8 +301,8 @@
         .badge {
           position: absolute;
           right: 20px;
-          top: 3px;
-          background-color: $light-turquoise;
+          top: 2px;
+          background-color: $turquoise;
           border-radius: 100px;
           color: $white;
           width: 20px;

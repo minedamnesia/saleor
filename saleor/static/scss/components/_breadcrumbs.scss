@@ -5,7 +5,7 @@
     display: inline;
     &:last-of-type {
       a {
-        color: $skull-gray;
+        color: $dark-gray;
         font-weight: 600;
       }
     }
@@ -18,7 +18,7 @@
       margin-left: $global-margin / 3;
     }
     a {
-      color: $gray;
+      color: $dark-gray;
     }
   }
 }
