@@ -249,14 +249,6 @@
         <div class="col-md-2 col-2 footer-list">
             <ul class="menu">
               <strong> QUICK LINKS </strong>
-              <li class="nav-item__footer-menu-item">
-                <a> {% trans "Your Account" %}</a>
-              </li>  
-                <li class="nav-item__footer-menu-item">
-                 <a rel="nofollow" href="{% url "cart:index" %}">
-                  {% trans "Your Cart" context "Main navigation item" %}
-                 </a>
-                </li>
                {% if user.is_authenticated %}
                 {% if user.is_staff %}
                 <li class="nav-item__footer-menu-item">
@@ -267,8 +259,13 @@
                 {% endif %}
                 <li class="nav-item__footer-menu-item">
                 <a href="{% url "account:details" %}">
-                  {% trans "Your account" context "Main navigation item" %}
+                  {% trans "Your Account" context "Main navigation item" %}
                 </a>
+                </li>
+                <li class="nav-item__footer-menu-item">
+                 <a rel="nofollow" href="{% url "cart:index" %}">
+                  {% trans "Your Cart" context "Main navigation item" %}
+                 </a>
                 </li>
                 {% if user.is_impersonate %}
                 <li class="nav-item__footer-menu-item">
