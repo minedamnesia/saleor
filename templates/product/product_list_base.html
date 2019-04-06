@@ -87,14 +87,11 @@
               <button class="btn btn-link">
                 <div>
                   <span>
+                    Sort by: 
                     {% if now_sorted_by == 'name' %}
-                      {% blocktrans trimmed %}
-                        Sort by: <b>name</b>
-                      {% endblocktrans %}
+                        <b>name</b>
                     {% elif now_sorted_by == 'price' %}
-                      {% blocktrans trimmed %}
-                        Sort by: <b>price</b>
-                      {% endblocktrans %}
+                         <b>price</b>
                     {% endif %}
                   </span>
                   <div class="sort-order-icon">
@@ -111,19 +108,16 @@
                   <li>
                     <div class="row">
                       <div class="col-6">
-                        {% trans 'Sort by' context 'Product list filters' %}:
                         <strong>{{ label }}</strong>
                       </div>
                       <div class="col-6">
                         <div>
                           <a href="{% get_sort_by_url choice %}">
-                            <span>{% trans 'ascending' context 'sort by option' %}</span>
                             <div class="sort-order-icon float-right">
                               <img class="lazyload lazypreload" data-src="{% static "images/arrow-up.svg" %}">
                             </div>
                           </a>
                           <a href="{% get_sort_by_url choice descending=True %}">
-                            <span>{% trans 'descending' context 'sort by option' %}</span>
                             <div class="sort-order-icon float-right">
                               <img class="lazyload lazypreload" data-src="{% static "images/arrow-down.svg" %}">
                             </div>
