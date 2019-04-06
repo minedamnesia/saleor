@@ -172,7 +172,7 @@
       li {
         display: inline-block;
         padding: 0 $global-padding / 2;
-        line-height: 1.9rem;
+        line-height: 1.7rem;
         a {
           color: $white;
           font-size: 1rem;
@@ -224,8 +224,8 @@
     }
     .form-control {
       height: 15px;
-      margin-top: 2px;
-      margin-bottom: 2px;
+      margin-top: 1px;
+      margin-bottom: 1px;
       padding: 1rem;
     }
     .mobile-search-icon {
@@ -265,7 +265,7 @@
 	padding-left: $global-padding * 2;
         position: absolute;
         right: 0;
-        top: 2;
+        top: 2px;
         z-index: 4;
         @include media-breakpoint-down(sm) {
           position: relative;
@@ -287,6 +287,7 @@
         }
         &:hover {
           text-decoration: none;
+          color: $gray;
         }
         .cart-label {
           padding-right: $global-padding / 2;
@@ -301,14 +302,14 @@
         .badge {
           position: absolute;
           right: 20px;
-          top: 2px;
+          top: -2px;
           background-color: $turquoise;
           border-radius: 100px;
           color: $white;
           width: 20px;
           height: 20px;
           text-align: center;
-          line-height: 2;
+          line-height: 1.75;
           &.empty {
             background-color: $darken-gray;
           }
