@@ -6,3 +6,6 @@ DATABASES = {
 
 SECRET_KEY = 'devel'
 DEBUG = True
+STRIPE_PUBLIC_KEY='pk_test_rE7eW0Zba5doK6d3woy8eJDn'
+STRIPE_SECRET_KEY='sk_test_4aKKnSvViRa0VASVho9krAGx'
+STRIPE_STORE_NAME="Kelly's Tea Salon"
