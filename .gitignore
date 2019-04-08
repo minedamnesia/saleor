@@ -37,3 +37,4 @@ webpack-bundle.json
 /saleor/settings/dev.py
 /saleor/settings/production.py
 
+=*

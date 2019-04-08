@@ -11,12 +11,12 @@ a {
   }
   &.link--styled {
     font-size: 0.8rem;
-    color: $body-color;
+    color: $dark-gray;
     text-decoration: underline;
     display: block;
   }
   &.link--clean {
-    color: $body-color;
+    color: $dark-gray;
     &:hover {
       text-decoration: none;
     }
