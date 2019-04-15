@@ -96,9 +96,9 @@
                   </span>
                   <div class="sort-order-icon">
                     {% if is_descending %}
-                      <svg data-src="{% static "images/chevron-down.svg" %}" />
+                      <img src="{% static "images/downarrowgray.png" %}" />
                     {% else %}
-                      <svg data-src="{% static "images/chevron-up.svg" %}" />
+                      <img src="{% static "images/uparrowgray.png" %}" />
                     {% endif %}
                   </div>
                 </div>
@@ -114,12 +114,12 @@
                         <div>
                           <a href="{% get_sort_by_url choice %}">
                             <div class="sort-order-icon float-right">
-                              <img class="lazyload lazypreload" data-src="{% static "images/arrow-up.svg" %}">
+                              <img class="lazyload lazypreload" src="{% static "images/uparrowgray.png" %}" />
                             </div>
                           </a>
                           <a href="{% get_sort_by_url choice descending=True %}">
                             <div class="sort-order-icon float-right">
-                              <img class="lazyload lazypreload" data-src="{% static "images/arrow-down.svg" %}">
+                              <img class="lazyload lazypreload" src="{% static "images/downarrowgray.png" %}" />
                             </div>
                           </a>
                         </div>

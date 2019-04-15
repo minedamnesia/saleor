@@ -222,6 +222,7 @@ INSTALLED_APPS = [
     'saleor.data_feeds',
     'saleor.page',
     'saleor.payment',
+    'saleor.community',
 
     # External apps
     'versatileimagefield',
@@ -240,7 +241,11 @@ INSTALLED_APPS = [
     'django_celery_results',
     'impersonate',
     'phonenumber_field',
-    'captcha']
+    'captcha',
+    'threadedcomments',
+    'django_comments',
+    'django.contrib.sites',
+]
 
 if DEBUG:
     MIDDLEWARE.append(
@@ -266,6 +271,8 @@ if DEBUG:
     ]
     DEBUG_TOOLBAR_CONFIG = {
         'RESULTS_CACHE_SIZE': 100}
+
+COMMENTS_APP = 'threadedcomments'
 
 ENABLE_SILK = get_bool_from_env('ENABLE_SILK', False)
 if ENABLE_SILK:
@@ -560,7 +567,9 @@ RAZORPAY = 'razorpay'
 STRIPE = 'stripe'
 
 CHECKOUT_PAYMENT_GATEWAYS = {
-    DUMMY: pgettext_lazy('Payment method name', 'Dummy gateway')}
+    DUMMY: pgettext_lazy('Payment method name', 'Dummy gateway'),
+    STRIPE: pgettext_lazy('Payment method name', 'Stripe gateway')
+}
 
 PAYMENT_GATEWAYS = {
     DUMMY: {
