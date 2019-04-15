@@ -244,7 +244,6 @@ INSTALLED_APPS = [
     'captcha',
     'threadedcomments',
     'django_comments',
-    'django.contrib.sites',
 ]
 
 if DEBUG:
