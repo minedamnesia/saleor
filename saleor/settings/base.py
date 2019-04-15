@@ -222,7 +222,7 @@ INSTALLED_APPS = [
     'saleor.data_feeds',
     'saleor.page',
     'saleor.payment',
-    'saleor.community',
+    'community',
 
     # External apps
     'versatileimagefield',
