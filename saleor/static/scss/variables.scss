@@ -10,7 +10,7 @@ $white: #fafafa;
 $light-gray: #f1f5f5;
 $gray: #d3d1d0;
 $darken-gray: darken($gray, 10%);
-$dark-gray:#545353;
+$dark-gray: #545353;
 $skull-gray: #9EADBD;
 $blue: #1E8BCA;
 $darken-blue: darken($blue, 10%);
@@ -28,25 +28,26 @@ $med-turquoise: #98cdca;
 $font-family-sans-serif: "Museo_Slab", sans-serif;
 @font-face {
   font-family: Museo_Slab;
-  src: local(Museo Slab Light), url(/static/assets/Museo_Slab_300.woff2) format("woff2"), url(/static/assets/Museo_Slab_300.woff) format("woff");
+  src: local(Museo Slab Light), url(../fonts/Museo_Slab_300.woff2) format("woff2"), url(../fonts/Museo_Slab_300.woff) format("woff");
   font-weight: 300;
 }
+
 @font-face {
   font-family: Museo_Slab;
-  src: local(Museo Slab Med-Light), url(/static/assets/Museo_Slab_300.woff2) format("woff2"), url(/static/assets/Museo_Slab_300.woff) format("woff");
+  src: local(Museo Slab Med-Light), url(../fonts/Museo_Slab_300.woff2) format("woff2"), url(../fonts/Museo_Slab_300.woff) format("woff");
   font-weight: 400;
 }
 
 @font-face {
   font-family: Museo_Slab;
-  src: local(Museo Slab  Medium), url(/static/assets/Museo_Slab_500.woff2) format("woff2"), url(/static/assets/Museo_Slab_300.woff) format("woff");
+  src: local(Museo Slab Medium), url(../fonts/Museo_Slab_500.woff2) format("woff2"), url(../fonts/Museo_Slab_300.woff) format("woff");
   font-weight: 500;
 }
 
 $font-family-decorative: "aphrodite_slim_text", sans-serif;
 @font-face {
   font-family: aphrodite_slim_text;
-  src: local(Aphrodite Slim Text), url(/static/fonts/aphrodite_slim_text.woff2) format("woff2"), url(/static/fonts/aprodite_slim_text.woff) format("woff");
+  src: local(Aphrodite Slim Text), url(../fonts/aphrodite_slim_text.woff2) format("woff2"), url(../fonts/aphrodite_slim_text.woff) format("woff");
   font-weight: 400;
 }
 
@@ -56,7 +57,7 @@ $h2-font-size: 1.3rem;
 $h3-font-size: 1rem;
 
 $theme-colors: (
-  primary: $light-turquoise,
+  primary: $turquoise,
   secondary: $white,
   success: $green,
   info: $turquoise,

@@ -5,7 +5,7 @@ input {
   border-radius: 8px;
   border: 1px solid $gray;
   &:focus {
-    color: $body-color;
+    color: $turquoise;
     border-color: $gray;
     background-color: $beige;
     outline: none;
@@ -96,7 +96,7 @@ input {
   }
   .form-control {
     width: 100%;
-    padding: 0.5rem;
+    //padding: 0.5rem;
     border-radius: $button-border-radius;
     padding: .1rem;
     font-size: 0.8rem;
@@ -113,7 +113,8 @@ input {
     outline: 0;
     display: flex;
     align-items: center;
-    @include transition(background, 0.3s) img {
+    @include transition(background, 0.3s);
+    img {
       height: 1rem;
       padding: $global-padding / 7;
     }
@@ -222,6 +223,8 @@ input#id_quantity {
 // ATM there is no better solution to set
 // border-radius on select inputs - 12.2017
 select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   border-radius: 2px;
   background: url("../images/arrow-select.svg") 100% 50% no-repeat / 24px 14px;
