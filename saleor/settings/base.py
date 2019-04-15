@@ -190,6 +190,8 @@ MIDDLEWARE = [
     'saleor.graphql.middleware.jwt_middleware'
 ]
 
+COMMENTS_APP = 'threadedcomments'
+
 INSTALLED_APPS = [
     # External apps that need to go before django's
     'storages',
@@ -270,8 +272,6 @@ if DEBUG:
     ]
     DEBUG_TOOLBAR_CONFIG = {
         'RESULTS_CACHE_SIZE': 100}
-
-COMMENTS_APP = 'threadedcomments'
 
 ENABLE_SILK = get_bool_from_env('ENABLE_SILK', False)
 if ENABLE_SILK:
