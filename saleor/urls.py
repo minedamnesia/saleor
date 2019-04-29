@@ -18,6 +18,7 @@ from .graphql.api import schema
 from .graphql.views import GraphQLView
 from .order.urls import urlpatterns as order_urls
 from .page.urls import urlpatterns as page_urls
+from .custom_pages.urls import urlpatterns as custom_pages_urls
 from .product.urls import urlpatterns as product_urls
 from .search.urls import urlpatterns as search_urls
 
@@ -41,6 +42,7 @@ translatable_urlpatterns = [
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     url(r'^order/', include((order_urls, 'order'), namespace='order')),
     url(r'^page/', include((page_urls, 'page'), namespace='page')),
+    url(r'', include((custom_pages_urls, 'custom_pages'), namespace='custom_pages')),
     url(r'^products/',
         include((product_urls, 'product'), namespace='product')),
     url(r'^account/',
