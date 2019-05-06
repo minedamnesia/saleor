@@ -10,20 +10,19 @@
   <div class="col-6 col-lg-3 product-list">
     <a href="{{ product.get_absolute_url }}" class="link--clean">
       <div class="home--square text-center">
-       <div class="home--content">
-        <div class="home--content-wrapper">
-          <div class="product-image home--content-inner">
-            <img class="img-responsive lazyload lazypreload"
-                 data-src="{% get_product_image_thumbnail product.get_first_image method="thumbnail" size=255 %}"
-                 data-srcset="{% get_product_image_thumbnail product.get_first_image method="thumbnail" size=255 %} 1x, {% get_product_image_thumbnail product.get_first_image method="thumbnail" size=510 %} 2x"
-                 alt=""
-                 src="{% placeholder size=255 %}">
-             <a class="btn btn-secondary home__button" href="#">{% trans "Shop now" context "Homepage action" %}</a>
-                         
+        <div class="home--content">
+          <div class="home--content-wrapper">
+            <div class="product-image home--content-inner">
+              <img class="img-responsive lazyload lazypreload"
+                   data-src="{% get_product_image_thumbnail product.get_first_image method="thumbnail" size=255 %}"
+                   data-srcset="{% get_product_image_thumbnail product.get_first_image method="thumbnail" size=255 %} 1x, {% get_product_image_thumbnail product.get_first_image method="thumbnail" size=510 %} 2x"
+                   alt="" src="{% placeholder size=255 %}">
+              <a class="btn btn-secondary home__button"
+                 href="{{ product.get_absolute_url }}">{% trans "Shop now" context "Homepage action" %}</a>
+            </div>
           </div>
         </div>
-</div>
-    </a>
       </div>
+    </a>
   </div>
 {% endfor %}

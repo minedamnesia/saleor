@@ -24,3 +24,6 @@ def tos(request):
 
 def upcoming_events(request):
     return TemplateResponse(request, 'custom_pages/upcoming_events.html', {'message': 'Upcoming Events'})
+
+def brewing_guide(request):
+    return TemplateResponse(request, 'custom_pages/brewing_guide.html', {'message': 'Brewing Guide'})

@@ -153,11 +153,17 @@
     }
   }
   &__login-inner {
-    padding-left:0px;
-    padding-right:0px;
-    background-color: $turquoise
+    padding-left:0;
+    padding-right:0;
+    background-color: $turquoise;
   }
   &__login {
+    .dropdown-item{
+      color: $turquoise !important;
+      &.active{
+        color: white !important;
+      }
+    }
     p {
       font-size: 0.7rem;
       margin-bottom: 0;
@@ -212,7 +218,7 @@
     }
   }
   &__search {
-    padding: 0;
+    padding: 3px;
     position: relative;
     form {
       svg {
@@ -238,6 +244,10 @@
     }
   }
 
+  &__right {
+    padding: 2px;
+  }
+
   &__brand {
     background-color: $white;
     height: 150px;
@@ -256,7 +266,7 @@
     &__cart {
       z-index: 4;
       @include media-breakpoint-up(md) {
-        line-height: 2rem;
+        line-height: 2.2rem;
       }
       .cart__icon {
         color: $white;
@@ -365,4 +375,7 @@
       }
     }
   }
+}
+.white-text{
+  color: #fff !important;
 }
