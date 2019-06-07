@@ -12,6 +12,7 @@ from django_prices.templatetags.prices_i18n import get_currency_fraction
 
 from .. import __version__
 
+
 def get_list(text):
     return [item.strip() for item in text.split(',')]
 
@@ -25,6 +26,7 @@ def get_bool_from_env(name, default_value):
             raise ValueError(
                 '{} is an invalid value for {}'.format(value, name)) from e
     return default_value
+
 
 DEBUG = get_bool_from_env('DEBUG', True)
 
@@ -48,9 +50,6 @@ REDIS_URL = os.environ.get('REDIS_URL')
 if REDIS_URL:
     CACHE_URL = os.environ.setdefault('CACHE_URL', REDIS_URL)
 CACHES = {'default': django_cache_url.config()}
-
-
-
 
 TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en'
@@ -167,8 +166,8 @@ TEMPLATES = [{
         'string_if_invalid': '<< MISSING VARIABLE "%s" >>' if DEBUG else ''}}]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY =  os.environ.get('SECRET_KEY')
-#env('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
+# env('SECRET_KEY')
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -197,6 +196,7 @@ INSTALLED_APPS = [
     'storages',
 
     # Django modules
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -444,7 +444,6 @@ WEBPACK_LOADER = {
             r'.+\.hot-update\.js',
             r'.+\.map']}}
 
-
 LOGOUT_ON_PASSWORD_CHANGE = False
 
 # SEARCH CONFIGURATION
@@ -508,7 +507,6 @@ IMPERSONATE = {
     'USE_HTTP_REFERER': True,
     'CUSTOM_ALLOW': 'saleor.account.impersonate.can_impersonate'}
 
-
 # Rich-text editor
 ALLOWED_TAGS = [
     'a',
@@ -531,7 +529,6 @@ ALLOWED_ATTRIBUTES = {
     'img': ['src']}
 ALLOWED_STYLES = ['text-align']
 
-
 # Slugs for menus precreated in Django migrations
 DEFAULT_MENUS = {
     'top_menu_name': 'navbar',
@@ -546,7 +543,6 @@ NOCAPTCHA = True
 RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
 
-
 #  Sentry
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
@@ -555,10 +551,8 @@ if SENTRY_DSN:
         'dsn': SENTRY_DSN,
         'release': __version__}
 
-
 SERIALIZATION_MODULES = {
     'json': 'saleor.core.utils.json_serializer'}
-
 
 DUMMY = 'dummy'
 BRAINTREE = 'braintree'

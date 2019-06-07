@@ -2,23 +2,26 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
+from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.views import serve
+from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
 from django.views.i18n import JavaScriptCatalog, set_language
 
+from community.urls import urlpatterns as community_urls
 from .account.urls import urlpatterns as account_urls
 from .checkout.urls import (
     cart_urlpatterns as cart_urls, checkout_urlpatterns as checkout_urls)
 from .core.sitemaps import sitemaps
 from .core.urls import urlpatterns as core_urls
+from .custom_pages.urls import urlpatterns as custom_pages_urls
 from .dashboard.urls import urlpatterns as dashboard_urls
 from .data_feeds.urls import urlpatterns as feed_urls
 from .graphql.api import schema
 from .graphql.views import GraphQLView
 from .order.urls import urlpatterns as order_urls
 from .page.urls import urlpatterns as page_urls
-from .custom_pages.urls import urlpatterns as custom_pages_urls
 from .product.urls import urlpatterns as product_urls
 from .search.urls import urlpatterns as search_urls
 
@@ -27,6 +30,7 @@ handler404 = 'saleor.core.views.handle_404'
 non_translatable_urlpatterns = [
     url(r'^dashboard/',
         include((dashboard_urls, 'dashboard'), namespace='dashboard')),
+    path('admin/', admin.site.urls),
     url(r'^graphql/', csrf_exempt(GraphQLView.as_view(
         schema=schema)), name='api'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
@@ -43,6 +47,7 @@ translatable_urlpatterns = [
     url(r'^order/', include((order_urls, 'order'), namespace='order')),
     url(r'^page/', include((page_urls, 'page'), namespace='page')),
     url(r'', include((custom_pages_urls, 'custom_pages'), namespace='custom_pages')),
+    url(r'', include((community_urls, 'community'), namespace='community')),
     url(r'^products/',
         include((product_urls, 'product'), namespace='product')),
     url(r'^account/',
@@ -56,6 +61,7 @@ urlpatterns = non_translatable_urlpatterns + i18n_patterns(
 
 if settings.DEBUG:
     import debug_toolbar
+
     urlpatterns += [
         url(r'^__debug__/', include(debug_toolbar.urls)),
         # static files (images, css, javascript, etc.)

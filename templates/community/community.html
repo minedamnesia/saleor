@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block stylesheet %}
+  <script>
+    function sizeSpacer(spacer) {
+      spacer.style.height = 0;
+      var container = spacer.parentNode;
+      var img = spacer.nextElementSibling || spacer.nextSibling;
+      var lastContentNode = container.children[container.children.length - 1];
+      var h = Math.max(0, container.clientHeight - img.clientHeight);
+      spacer.style.height = h + "px";
+      while (h > 0 && img.getBoundingClientRect().bottom > lastContentNode.getBoundingClientRect().bottom) {
+        spacer.style.height = --h + "px";
+      }
+    }
+
+    window.onload = function () {
+      sizeSpacer(document.getElementById('spacer'))
+    };
+  </script>
+{% endblock %}
+{% block title %}Community{% endblock %}
+
+{% block content %}
+  <div class="community">
+    <div class="community-title container">
+      <span>Tell Us your story</span>
+    </div>
+    <div class="row mt-5 community-block">
+      <div class="col-md-6 my-3 block-form">
+        <div>
+          <p class="text-justify">Sharing a cup of tea with friends or family has always
+            had a special place for us. Share your story about a
+            special moment you've had sharing with others over a
+            cup of tea and will post new stories every month.</p>
+          <form id="story_form" method="post" action="" enctype="multipart/form-data" class="text-center">
+
+            {% csrf_token %}
+            {% for hidden in story_form.hidden_fields %}
+              {{ hidden }}
+            {% endfor %}
+
+            {% for field in story_form %}
+              {{ field }} <br/>
+            {% endfor %}
+
+            <input type="submit" name="submit" value="Submit" class="mt-4 btn-primary"/>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6 my-3 block-image-text block-1">
+        <div class="w-75">
+          <div class="text-block">
+            {{ stories.0.description }}
+            {% if stories.0.author %}
+              <div class="right-align"><span>- {{ stories.0.author.get_full_name }}</span></div>
+            {% endif %}
+          </div>
+          <div class="img-block">
+            <img src="{{ stories.0.image.url }}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 my-5 block-image-text block-2">
+        <div>
+          <div class="img-block w-75">
+            <img src="{{ stories.1.image.url }}" class="img-fluid" alt="">
+          </div>
+          <div class="text-block">
+            <div class="spacer"></div>
+            {{ stories.1.description }}
+            {% if stories.1.author %}
+              <div class="right-align"><span>- {{ stories.1.author.get_full_name }}</span></div>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-11 offset-md-1 block-image-text block-3">
+        <div>
+          <div class="text-block">
+            <div id="spacer"></div>
+            <div class="spacer"></div>
+            {{ stories.2.description }}
+            {% if stories.2.author %}
+              <div class="right-align"><span>- {{ stories.2.author.get_full_name }}</span></div>
+            {% endif %}
+          </div>
+          <div class="img-block">
+            <img src="{{ stories.2.image.url }}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -176,7 +176,7 @@
             <form action="{% url 'account:delete' %}" method="post">
               {% csrf_token %}
               <p>
-                {% blocktrans context "Message informing about the process of account removal" %}
+                {% blocktrans %}
                   If you'd like to remove your account, please click on the button below and a confirmation email will be sent to you.
                 {% endblocktrans %}
               </p>
