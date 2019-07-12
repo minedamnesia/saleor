@@ -5,8 +5,10 @@ export default $(document).ready((e) => {
       const $form = $(this).closest('form');
       const $countryField = $form.find('select[name=country]');
       const $previewField = $form.find('input.preview');
+      const $triggeredByCountryField = $form.find('input.triggered_by_country');
       $countryField.on('change', () => {
         $previewField.val('on');
+        $triggeredByCountryField.val('on');
         $form.submit();
       });
     });
@@ -36,15 +38,38 @@ export default $(document).ready((e) => {
   let $addressHide = $('.address_hide label');
   let $addressForm = $('.checkout__new-address');
   let $initialValue = $('#address_new_address').prop('checked');
+
   $addressShow.click((e) => {
-    $addressForm.slideDown('slow');
+    if (shippingAddress === '') {
+      $addressForm.slideDown('slow');
+    }
   });
   $addressHide.click((e) => {
     $addressForm.slideUp('slow');
+    if (shippingAddress) {
+      $(this).find('input').prop('checked', true).trigger('change');
+    }
   });
+
+  $(document).on('change', 'input[type="radio"][name="address"]', function () {
+    if (shippingAddress) {
+      if ($(this).prop('checked')) {
+        const $form = $(this).closest('form');
+        if ($(this).prop('value') === 'new_address') {
+          const $previewField = $form.find('input.preview');
+          $previewField.val('on');
+        }
+        $form.submit();
+      }
+    }
+  });
+
   if ($initialValue) {
     $addressForm.slideDown(0);
   } else {
     $addressForm.slideUp(0);
+  }
+  if (initialAddress) {
+    $('.address_hide input[type="radio"][name="address"][value="' + initialAddress + '"').prop('checked', true);
   }
 });

@@ -276,7 +276,8 @@ class CartShippingMethodForm(forms.ModelForm):
         discounts = kwargs.pop('discounts')
         taxes = kwargs.pop('taxes')
         super().__init__(*args, **kwargs)
-        country_code = self.instance.shipping_address.country.code
+        # country_code = self.instance.shipping_address.country.code
+        country_code = self.initial.get('selected_country', '--')
         qs = ShippingMethod.objects.applicable_shipping_methods(
             price=self.instance.get_subtotal(discounts, taxes).gross,
             weight=self.instance.get_total_weight(),

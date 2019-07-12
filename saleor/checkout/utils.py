@@ -347,14 +347,20 @@ def get_shipping_address_forms(cart, user_addresses, data, country):
     """Forms initialized with data depending on shipping address in cart."""
     shipping_address = (
         cart.shipping_address or cart.user.default_shipping_address)
+    initial_address = ''
 
     if shipping_address and shipping_address in user_addresses:
         address_form, preview = get_address_form(
             data, country_code=country.code,
             initial={'country': country})
+        if data:
+            initial_address = data.get('address', None)
+        else:
+            initial_address = shipping_address.id
         addresses_form = AddressChoiceForm(
             data, addresses=user_addresses,
-            initial={'address': shipping_address.id})
+            # initial={'address': shipping_address.id})
+            initial={'address': initial_address})
     elif shipping_address:
         address_form, preview = get_address_form(
             data, country_code=shipping_address.country.code,
@@ -368,15 +374,16 @@ def get_shipping_address_forms(cart, user_addresses, data, country):
         addresses_form = AddressChoiceForm(
             data, addresses=user_addresses)
 
-    return address_form, addresses_form, preview
+    return address_form, addresses_form, preview, initial_address
 
 
-def update_shipping_address_in_cart(cart, user_addresses, data, country):
+def update_shipping_address_in_cart(cart, user_addresses, data, country, ab):
     """Return shipping address choice forms and if an address was updated."""
-    address_form, addresses_form, preview = (
+    address_form, addresses_form, preview, initial_address = (
         get_shipping_address_forms(cart, user_addresses, data, country))
 
     updated = False
+    country_code = ''
 
     if addresses_form.is_valid() and not preview:
         use_existing_address = (
@@ -388,13 +395,27 @@ def update_shipping_address_in_cart(cart, user_addresses, data, country):
             address = Address.objects.get(id=address_id)
             change_shipping_address_in_cart(cart, address)
             updated = True
+            country_code = address.country.code
 
         elif address_form.is_valid():
             address = address_form.save()
             change_shipping_address_in_cart(cart, address)
             updated = True
+            country_code = address.country.code
 
-    return addresses_form, address_form, updated
+        if not use_existing_address:
+            country_code = addresses_form.data.get('country', address_form.initial.get('country', False))
+
+    if (not updated and ab) or preview:
+        country_code = addresses_form.data.get('country', address_form.initial.get('country', False))
+
+    if not country_code:
+        if cart.shipping_address:
+            country_code = cart.shipping_address.country.code
+        else:
+            country_code = country.code
+
+    return addresses_form, address_form, updated, country_code, initial_address
 
 
 def update_shipping_address_in_anonymous_cart(cart, data, country):

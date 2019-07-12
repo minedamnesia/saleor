@@ -71,7 +71,9 @@ def summary_with_shipping_view(request, cart):
         'additional_addresses': user_addresses,
         'address_form': address_form,
         'addresses_form': addresses_form,
-        'note_form': note_form})
+        'note_form': note_form,
+        'initialAddress': '',
+        'shippingAddress': ''})
     return TemplateResponse(request, 'checkout/summary.html', ctx)
 
 

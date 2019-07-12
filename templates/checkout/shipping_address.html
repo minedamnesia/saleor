@@ -15,9 +15,51 @@
         {% include "account/snippets/address_form.html" with address_form=address_form only %}
       {% endif %}
 
-      <button type="submit" class="btn btn-primary">
-        {% trans "Continue" context "Checkout shipping address primary action" %}
-      </button>
+      {% if not shipping_method_form.shipping_method.field.choices %}
+        <button type="submit" class="btn btn-primary">
+          {% trans "Continue" context "Checkout shipping address primary action" %}
+        </button>
+      {% endif %}
     </div>
+
+    <hr/>
+
+    {% if shipping_method_form %}
+      {% if shipping_method_form.shipping_method.field.choices %}
+        <h2>{% trans "Shipping method" context "Checkout shipping method form title" %}</h2>
+        <div class="checkout__shipping-methods-form">
+
+          {% for choice in shipping_method_form.shipping_method %}
+            <div class="radio">
+              <label>
+                <div class="card card-default">
+                  <div class="card-body">
+                    <strong>
+                      {{ choice }}
+                    </strong>
+                  </div>
+                </div>
+              </label>
+            </div>
+          {% endfor %}
+
+          <button type="submit" class="btn btn-primary">
+            {% trans "Continue" context "Checkout shipping address & method primary action" %}
+          </button>
+
+        </div>
+      {% else %}
+        {% blocktrans context "Message displayed to the user if there's no shipping methods for his country" %}
+          Unfortunately we do not ship to your selected country.
+          <br>
+          Please enter an alternative shipping address or contact us, if you think that's a mistake.
+        {% endblocktrans %}
+      {% endif %}
+    {% endif %}
+
   </form>
+  <script>
+    const initialAddress = '{{ initialAddress }}';
+    const shippingAddress = '{{ shippingAddress }}';
+  </script>
 {% endblock %}
